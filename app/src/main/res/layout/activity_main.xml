@@ -42,7 +42,7 @@
     <View
         android:id="@+id/view2"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="0.1dp"
         android:background="@android:color/darker_gray"
         app:layout_constraintTop_toBottomOf="@+id/home_app_bar" />
 
@@ -52,12 +52,13 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view2" />
+        app:layout_constraintTop_toBottomOf="@+id/view2"
+        android:paddingBottom="100dp"/>
 
     <View
         android:id="@+id/view3"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="0.1dp"
         android:background="@android:color/darker_gray"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_bar" />
     <com.google.android.material.bottomnavigation.BottomNavigationView

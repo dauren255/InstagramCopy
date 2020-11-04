@@ -25,7 +25,8 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager = layoutManager
 
         val arrs = mutableListOf(
-            Post("timur.tleu",R.drawable.post_author,R.drawable.post, 809, "Поделись, какой факт запомнился?)", 48)
+            Post("timur.tleu",R.drawable.post_author, R.drawable.post, 809, "Поделись, какой факт запомнился?)", 48),
+            Post("timur.tleu",R.drawable.post_author, R.drawable.post, 809, "Поделись, какой факт запомнился?)", 48)
         )
         recyclerView.adapter = PostAdapter(applicationContext, arrs)
     }
