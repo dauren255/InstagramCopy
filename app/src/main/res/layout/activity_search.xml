@@ -4,32 +4,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     tools:context=".SearchActivity">
 
-    <TextView
-        android:text="Hello world"
-        app:layout_constraintBottom_toTopOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+    <com.google.android.material.appbar.AppBarLayout
         app:layout_constraintTop_toTopOf="parent"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"/>
+        android:layout_width="match_parent"
+        android:id="@+id/search_app_bar"
+        android:background="@color/colorPrimaryDark">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:textColorHint="@color/notSelectedItem"
+                android:hint="@string/search"
+                android:background="@drawable/edit_text_background"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:padding="5dp"
+                android:textColor="@color/textColor"
+                android:layout_marginRight="50dp"
+                android:layout_marginEnd="50dp" />
+            <ImageView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="15dp"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/ic_photo_camera"
+                />
+        </RelativeLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/search_app_bar" />
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="@color/searchColor"
+        app:layout_constraintTop_toBottomOf="@+id/search_recycler_view" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_posts_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/view2"
+        android:paddingBottom="120dp"/>
 
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="0.1dp"
         android:background="@android:color/darker_gray"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_bar" />
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_bar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        app:itemBackground="@color/colorPrimary"
+        app:itemBackground="@color/colorPrimaryDark"
         app:itemIconTint="@drawable/selector"
+        app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/bottom_navigation_menu"
-        app:labelVisibilityMode="unlabeled"/>
+        app:menu="@menu/bottom_navigation_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
